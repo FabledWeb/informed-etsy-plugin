@@ -20,9 +20,10 @@ EtsyApi.prototype._get= function(path, callback) {
       json: true
     },
     function (error, response, body) {
-      if (!error && response.statusCode != 200) {
+      if (!error && response.statusCode != 200)
         error = new Error(response.statusCode + ': '+body);
-      }
+      if(error)
+        console.error(error);
       callback(error, body);
     }
   );
