@@ -19,5 +19,13 @@
   "author": "Eddie Canales",
   "license": "GPLv2",
   "readmeFilename": "README.md",
-  "gitHead": "35d85dc54aaf808c87bc12084ebd1e26624ba62d"
+  "gitHead": "35d85dc54aaf808c87bc12084ebd1e26624ba62d",
+  "dependencies": {
+    "request": "~2.27.0"
+  },
+  "devDependencies": {
+    "grunt-cli": "~0.1.9",
+    "grunt": "~0.4.1",
+    "grunt-jasmine-bundle": "0.0.2"
+  }
 }
