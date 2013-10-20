@@ -8,19 +8,16 @@ describe ".getListing", ->
   beforeAll (done) ->
     api.getListing "160164360", (err, details) ->
       listing= details.results[0]
-      console.log(listing)
       done()
 
   beforeAll (done) ->
     api.findUserProfile listing.user_id, (err, details) ->
       userProfile= details.results[0]
-      console.log(userProfile)
       done()
 
   beforeAll (done) ->
     api.getListingShop listing.listing_id, (err, details) ->
       shop= details.results[0]
-      console.log(shop)
       done()
 
   it "should be flagged as not manufactured", ->
@@ -35,8 +32,6 @@ describe ".getListing", ->
   it "should have a good sales/time ratio", ->
     timeMember= new Date().getTime()/1000 - shop.creation_tsz
     daysMember= Math.floor(timeMember/60/60/24)
-    console.log('days a member: '+daysMember)
     salesPerDay= userProfile.transaction_sold_count / daysMember
-    console.log('sales/day='+salesPerDay)
     expect(salesPerDay).toBeLessThan(50)
 
